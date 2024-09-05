@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'RxJS-State-Management-and-API-Integration';
+
+  constructor(private cartItems: CartService) {}
+
+  ngOnInit() {
+    this.cartItems.logStuff();
+  }
 }
