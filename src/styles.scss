@@ -12,3 +12,10 @@ body {
     font-family: "Montserrat Subrayada", sans-serif;
     font-weight: 500;
 }
+
+::-webkit-scrollbar {
+    width: 3px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+    background: lightgrey;
+    border-radius: 999px;
+  }
