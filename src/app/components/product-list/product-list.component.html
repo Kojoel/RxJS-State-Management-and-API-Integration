@@ -11,10 +11,19 @@
     <section class="cartItems">
       @if(productData$ | async; as product) {
         @for(item of product; track item) {
-          <div class="item" (click)="addtoCart(item)">
+          <div class="item">
             <img [src]="item.image.mobile" [alt]="item.category">
             <p class="item-name">{{  item.name }}</p>
-            <i class="fa-solid fa-plus add-to-cart-icon"></i>
+            @if(cartItems.isIncart(item)) {
+              <i class="fa-solid fa-minus remove-from-cart-icon"
+                  (click)="removeFromCart(item)"    
+              ></i>
+            }
+            @else {
+              <i class="fa-solid fa-plus add-to-cart-icon" 
+                  (click)="addtoCart(item)"
+              ></i>
+            }
           </div>
         }
       }

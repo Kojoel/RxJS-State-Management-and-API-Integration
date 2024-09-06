@@ -13,13 +13,19 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 })
 export class ProductListComponent {
 
-  constructor(private cartItems: CartService, private products: ProductService) {}
+  constructor(public cartItems: CartService, private products: ProductService) {
+    // cartItems.cartItemSubject.subscribe(item => console.log(item));
+  }
 
   productData$ = this.products.getProductData();
   cartItems$ = this.cartItems.totalCartItems$;
-  
+
   addtoCart(product: Product) {
     this.cartItems.addToCart(product);
+  }
+
+  removeFromCart(product: Product) {
+    this.cartItems.removeFromCart(product);
   }
 
 }

@@ -117,3 +117,35 @@
 .add-to-cart-icon:active {
     opacity: .8;
 }
+
+
+.remove-from-cart-icon {
+    position: absolute;
+    bottom: -10px;
+    width: 30px;
+    height: 30px;
+    background: lightgrey;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: brown;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    // display: none;
+}
+
+.remove-from-cart-icon:hover {
+    scale: 1.1;
+}
+.remove-from-cart-icon:active {
+    opacity: .8;
+}
+
+
+.hideAdd {
+    display: none;
+}
+
+.showAdd {
+    display: grid;
+}
